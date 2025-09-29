@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # Solicitar el nombre y genero de la persona 
 nombre = input("Ingresa tu nombre: ").strip().title()
@@ -15,7 +16,7 @@ else:
     # Si NO cumple ninguna de las condiciones, asignar al grupo B
     grupo = "B"
 
-    # Validar la edad y determinar si es mayor de edad (18 años o más)
+    # Validar la edad y determinar si es mayor de edad (18 o mas)
 try:
     edad = int(edad_str)
     if edad >= 18:
@@ -23,11 +24,12 @@ try:
     else:
         estado_edad = "Eres menor de edad."
 except ValueError:
-    # Manejo de error si el usuario no introduce un número
-    estado_edad = "No fue posible determinar tu mayoría de edad."
+    # Manejo de error si el usuario no introduce un numero
+    estado_edad = "No fue posible determinar tu mayoria de edad."
 
 # Mostrar los resultados al usuario
 print(f"\nHola {nombre}")
 print(f"Tu genero es: {'Mujer' if sexo == 'M' else 'Hombre'}") # "Mujer" si sexo es "M", "Hombre" en cualquier otro caso
 print(f"Perteneces al grupo: {grupo}")
 print(estado_edad)
+input("\nPresiona Enter para salir...")
