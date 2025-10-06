@@ -64,4 +64,19 @@ for i, persona in enumerate(personas, 1):
     print(f"Pertenece al grupo: {persona['grupo']}")
     print(f"Estado de edad: {persona['estado_edad']}")
 
+# Contadores generales
+grupo_a = sum(1 for p in personas if p["grupo"] == "A")
+grupo_b = sum(1 for p in personas if p["grupo"] == "B")
+mayores = sum(1 for p in personas if "mayor" in p["estado_edad"])
+menores = sum(1 for p in personas if "menor" in p["estado_edad"])
+
+print("\n" + "="*50)
+print("RESUMEN GENERAL")
+print("="*50)
+print(f"Total de personas registradas: {len(personas)}")
+print(f"Personas en grupo A: {grupo_a}")
+print(f"Personas en grupo B: {grupo_b}")
+print(f"Mayores de edad: {mayores}")
+print(f"Menores de edad: {menores}")
+
 input("\nPresiona Enter para salir...")
