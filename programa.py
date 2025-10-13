@@ -73,10 +73,18 @@ menores = sum(1 for p in personas if "menor" in p["estado_edad"])
 print("\n" + "="*50)
 print("RESUMEN GENERAL")
 print("="*50)
-print(f"Total de personas registradas: {len(personas)}")
+print(f"Total de personas registradas : {len(personas)}")
 print(f"Personas en grupo A: {grupo_a}")
 print(f"Personas en grupo B: {grupo_b}")
 print(f"Mayores de edad: {mayores}")
 print(f"Menores de edad: {menores}")
+
+# Nueva funcionalidad: Filtrar por grupo
+filtrar = input("\n¿Deseas filtrar por grupo? (A/B/N) : ").strip().upper()
+if filtrar in ["A", "B"]:
+    print(f"\nPersonas del grupo {filtrar}:")
+    for persona in personas:
+        if persona["grupo"] == filtrar:
+            print(f"- {persona['nombre']}")
 
 input("\nPresiona Enter para salir...")
