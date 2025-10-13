@@ -79,4 +79,15 @@ print(f"Personas en grupo B: {grupo_b}")
 print(f"Mayores de edad: {mayores}")
 print(f"Menores de edad: {menores}")
 
+# Nueva funcionalidad: Exportar a archivo
+exportar = input("\n¿Deseas exportar los resultados a un archivo? (S/N): ").strip().upper()
+if exportar == "S":
+    with open("resultados_personas.txt", "w", encoding="utf-8") as archivo:
+        archivo.write("RESULTADOS DE REGISTRO DE PERSONAS\n")
+        archivo.write("=" * 40 + "\n")
+        for persona in personas:
+            archivo.write(f"Nombre: {persona['nombre']}, Grupo: {persona['grupo']}, Edad: {persona['edad']}\n")
+    print("Datos exportados a 'resultados_personas.txt'")
+    input("Presiona Enter para continuar...")
+
 input("\nPresiona Enter para salir...")
